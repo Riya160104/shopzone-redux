@@ -1,70 +1,234 @@
-# Getting Started with Create React App
+# ShopZone - E-Commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully functional e-commerce web application built with React.js and Redux Toolkit. Features include product browsing, advanced filtering, shopping cart management, theme switching, and protected routes.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+[Add your deployed link here]
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### Core Features
+- **Product Catalog** - Browse products from DummyJSON API
+- **Advanced Filtering** - Filter by category, price range, and search
+- **Sorting** - Sort products by price (low-high, high-low)
+- **Shopping Cart** - Add/remove items, update quantities
+- **Cart Persistence** - Cart data saved in localStorage
+- **Product Details** - View detailed product information
+- **Theme Manager** - Dark/Light mode toggle with persistence
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Redux Implementation
+- **Centralized State Management** - Cart, filters, and theme in one store
+- **Three Redux Slices** - cartSlice, filterSlice, themeSlice
+- **LocalStorage Sync** - Data persists after page refresh
+- **Redux DevTools** - Track all state changes
 
-### `npm run build`
+### Routing & Navigation
+- **React Router** - Multi-page navigation without reload
+- **Dynamic Routes** - Product detail pages with URL parameters
+- **Protected Routes** - Checkout page only for logged-in users
+- **Guest Login** - Quick access without registration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React.js** - Frontend library
+- **Redux Toolkit** - State management
+- **React Router DOM** - Navigation
+- **CSS3** - Styling with theme variables
+- **DummyJSON API** - Mock product data
+- **LocalStorage** - Data persistence
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
+shopzone/
+├── src/
+│ ├── components/
+│ │ ├── Navbar.js # Navigation with cart badge
+│ │ ├── ProductCard.js # Product display card
+│ │ ├── FilterSidebar.js # Filter controls
+│ │ └── ProtectedRoute.js # Route guard
+│ ├── pages/
+│ │ ├── Home.js # Landing page
+│ │ ├── Shop.js # Product listing
+│ │ ├── ProductDetail.js # Single product view
+│ │ ├── Cart.js # Shopping cart
+│ │ ├── Login.js # Authentication
+│ │ └── Checkout.js # Order placement
+│ ├── redux/
+│ │ ├── store.js # Redux store config
+│ │ └── slices/
+│ │ ├── cartSlice.js # Cart state & actions
+│ │ ├── filterSlice.js # Filter state & actions
+│ │ └── themeSlice.js # Theme state & actions
+│ ├── App.js # Main component
+│ ├── App.css # Global styles
+│ └── index.js # Entry point
+├── public/
+├── package.json
+└── README.md
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚦 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository**
+```bash
+git clone https://github.com/yourusername/shopzone.git
+cd shopzone
+Install dependencies
 
-## Learn More
+bash
+npm install
+Start development server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+npm start
+Open in browser
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+text
+http://localhost:3000
+Build for Production
+bash
+npm run build
+Serve Production Build
+bash
+npx serve -s build
+Features in Detail
+Shopping Cart
+Add products from shop or product detail page
 
-### Code Splitting
+Update quantities (+/- buttons)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Remove individual items
 
-### Analyzing the Bundle Size
+Clear entire cart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Real-time total calculation
 
-### Making a Progressive Web App
+Cart badge showing item count
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Data persists after page refresh
 
-### Advanced Configuration
+Filtering System
+Category filter (All, Beauty, Fragrances, Furniture, Groceries)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Price range filter (min/max with apply button)
 
-### Deployment
+Sort by (Default, Price Low-High, Price High-Low)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Search by product name
 
-### `npm run build` fails to minify
+Reset all filters button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Real-time product grid updates
+
+Theme Manager
+Dark/Light mode toggle
+
+Theme preference saved in localStorage
+
+Smooth transitions
+
+Color palette:
+
+Light: Beige background, Navy text, Gold accents
+
+Dark: Dark navy background, Light text, Red accents
+
+Routing & Authentication
+Home, Shop, Product Detail, Cart, Login, Checkout pages
+
+Dynamic routing for products (/product/:id)
+
+Protected route for checkout
+
+Guest login functionality
+
+Redirect to login if not authenticated
+
+Responsive Design
+Mobile-friendly layout
+
+Grid system adapts to screen size
+
+Collapsible filter sidebar on mobile
+
+Touch-friendly buttons
+
+Configuration
+API Endpoints Used
+text
+GET https://dummyjson.com/products          # Fetch all products
+GET https://dummyjson.com/products/:id      # Fetch single product
+localStorage Keys
+text
+cart    # Stores cart items array
+theme   # Stores darkMode boolean
+user    # Stores user information
+Testing the Application
+Test Redux State
+Install Redux DevTools Chrome extension
+
+Open DevTools → Redux tab
+
+Add to cart → see cart/addToCart action
+
+Apply filters → see filters/setCategory action
+
+Toggle theme → see theme/toggleTheme action
+
+Test Cart Persistence
+Add items to cart
+
+Refresh the page
+
+Cart items should still be there
+
+Test Protected Route
+Try to go to /checkout directly
+
+Should redirect to login page
+
+Login as guest
+
+Should access checkout page
+
+Key Learnings
+This project helped me understand:
+
+Redux Toolkit implementation with slices
+
+Centralized state management
+
+LocalStorage for data persistence
+
+React Router for navigation
+
+Protected routes implementation
+
+Performance optimization with useMemo
+
+Theme management with CSS variables
+
+Filtering and sorting logic
+
+API data fetching
+
+Credits
+API: DummyJSON for providing mock product data
+
+Icons: React Icons library
+
+Font: Google Fonts (Poppins, Playfair Display)
