@@ -231,4 +231,8 @@ API: DummyJSON for providing mock product data
 
 Icons: React Icons library
 
+<<<<<<< HEAD
 Font: Google Fonts (Poppins, Playfair Display)
+=======
+Font: Google Fonts (Poppins, Playfair Display)
+>>>>>>> c09fe33 ( added prompts.md)
